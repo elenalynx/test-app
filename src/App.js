@@ -1,4 +1,6 @@
 import {Component, StrictMode} from "react";
+// import {Component, Fragment, StrictMode} from "react";
+
 import './App.css';
 
 // function WhoAmI (props) {
@@ -40,7 +42,8 @@ class WhoAmI extends Component {
         const {name, surname, link} = this.props;
         const {position, years} = this.state;
         return (
-            <div>
+            // <Fragment>
+            <>
                 {/*<button onClick={() => this.nextYear()}>{this.state.text}</button>*/}
                 <button onClick={this.nextYear}>{this.state.text}</button>
                 <h1>My name is {name}, surname - {surname},
@@ -52,11 +55,14 @@ class WhoAmI extends Component {
                     {/*<input type="text" onChange={this.commitInputChanges} />*/}
                     <input type="text" onChange={(e) => this.commitInputChanges(e, 'some color')} />
                 </form>
-            </div>
+            </>
+            // </Fragment>
         )
     }
 
 }
+
+// React.Fragment key="33"
 
 function App() {
     return (
